@@ -39,6 +39,7 @@ public class GeneralSettings extends android.support.v4.app.Fragment{
         itemArrayList.add(new Item("עדכון יעד נסיעה",generalImages[1]));
         itemArrayList.add(new Item("יצירת קבוצת נסיעה",generalImages[2]));
         itemArrayList.add(new Item("חזור לתפריט ראשי",generalImages[3]));
+        
         settingsAdapter=new MainAdapterGrid(getActivity(),R.layout.grid_row,itemArrayList);
     }
 
