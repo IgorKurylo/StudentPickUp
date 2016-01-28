@@ -1,0 +1,36 @@
+<resources>
+
+    <!--&lt;!&ndash; Base application theme. &ndash;&gt;-->
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
+        <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+    <!--</style>-->
+
+
+    <style name="IPQTheme" parent="IPQTheme.Base">
+
+
+
+
+    </style>
+
+    <style name="IPQTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+
+        <item name="windowActionBar">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorButtonNormal">@color/btncolor</item>
+
+    </style>
+
+    <style name="MyAppActionBarTabStyle" parent="@android:style/Widget.ActionBar.TabView">
+
+        <item name="android:minWidth">40dip</item>
+        <item name="android:maxWidth">40dip</item>
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+
+
+</resources>

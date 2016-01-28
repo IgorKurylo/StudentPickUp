@@ -1,0 +1,34 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/genaralSettings_content"
+    tools:context="com.ipq.ipq.Fragments.GeneralSettings"
+    android:background="@color/windowBackground">
+
+    <TextView
+        android:layout_height="75dp"
+        android:text="הגדרות כלליות"
+        android:textSize="35dp"
+        android:textColor="#fdffffff"
+        android:layout_width="match_parent"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:id="@+id/generalTitle"
+        android:gravity="center_horizontal"/>
+
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="400dip"
+        android:id="@+id/genaralSettings"
+        android:numColumns="2"
+        android:layout_marginTop="100dp"
+        android:columnWidth="100dp"
+        android:horizontalSpacing="20dp"
+        android:verticalSpacing="20dp"
+        android:gravity="center_horizontal"
+        android:stretchMode="columnWidth"
+        android:layout_gravity="right|top">
+    </GridView>
+</FrameLayout>

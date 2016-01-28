@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground"
+    android:id="@+id/fragment_mainlayout">
+
+    <TextView
+
+        android:layout_height="75dp"
+        android:text="תפריט לנהג"
+        android:textSize="35dp"
+        android:textColor="#fdffffff"
+        android:layout_width="match_parent"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:id="@+id/titledriver"
+        android:gravity="center_horizontal"/>
+
+
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gridView"
+        android:numColumns="2"
+
+        android:columnWidth="100dp"
+        android:horizontalSpacing="20dp"
+        android:verticalSpacing="20dp"
+        android:gravity="center_horizontal"
+        android:stretchMode="columnWidth"
+        android:layout_gravity="center">
+    </GridView>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/opening"
+        android:layout_gravity="center_horizontal|bottom" />
+
+
+</FrameLayout>

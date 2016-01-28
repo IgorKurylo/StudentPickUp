@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+
+    android:background="@drawable/field"
+    android:layout_height="wrap_content"
+    android:weightSum="1">
+
+
+    <ImageView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_phone"
+        android:id="@+id/Phone"
+        android:layout_marginLeft="50dip"
+        android:layout_gravity="center_vertical" />
+
+    <ImageView android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:src="@drawable/ic_sms"
+android:id="@+id/SMS"
+        android:layout_marginLeft="35dip"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_vertical"></ImageView>
+
+    <CheckBox
+    android:layout_width="48dp  "
+    android:layout_height="48dp"
+
+    android:id="@+id/Fav"
+    android:checked="false"
+    android:button="@drawable/check_box"
+    android:layout_marginLeft="30dip"
+    android:layout_gravity="center_vertical"
+        android:layout_weight="0.03" />
+
+
+
+</LinearLayout>

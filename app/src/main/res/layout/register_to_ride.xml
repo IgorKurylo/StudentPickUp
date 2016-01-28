@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="פרסום טרמפ"
+        android:id="@+id/textView"
+        android:textSize="30dp"
+        android:textStyle="bold"
+
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ffffffff" />
+
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:textColor="@color/textColorPrimary"
+        android:textStyle="bold"
+
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button_ipq"
+        android:text="הגדר שעת יציאה"
+        android:id="@+id/btnTimeOut"
+        android:layout_gravity="center_horizontal" />
+
+
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:textColor="@color/textColorPrimary"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"
+
+        android:background="@drawable/button_ipq"
+        android:text="הגדר תאריך"
+        android:id="@+id/btnDate"
+        android:layout_gravity="center_horizontal" />
+
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:textColor="@color/textColorPrimary"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button_ipq"
+        android:text="הגדר תעריף"
+        android:id="@+id/btnRate"
+        android:layout_gravity="center_horizontal" />
+
+
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/imageView"
+        android:layout_marginTop="15dp"
+        android:weightSum="2"
+        android:id="@+id/rdGrpCollageHome"
+
+        android:checked="false"
+
+
+        android:layout_gravity="center_horizontal">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="נסיעה למכללה"
+            android:gravity="center"
+            android:id="@+id/collage"
+            android:layout_gravity="center_horizontal"
+            android:checked="false"
+            android:textSize="20dp"
+            android:textColor="#ffffffff"
+            android:textStyle="bold"
+            />
+
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="נסיעה הביתה  "
+            android:gravity="center"
+            android:id="@+id/home"
+            android:layout_gravity="center_horizontal"
+            android:checked="false"
+            android:textSize="20dp"
+
+            android:textColor="#ffffffff"
+            android:textStyle="bold"
+            />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="נסיעה לעבודה"
+            android:id="@+id/work"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:checked="false"
+            android:textSize="20dp"
+            android:textColor="#ffffffff"
+            android:textStyle="bold"
+            />
+    </RadioGroup>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textSize="25dp"
+        android:gravity="bottom|center"
+        android:background="@drawable/button_ipq"
+        android:text="פרסם טרמפ"
+        android:textColor="@color/textColorPrimary"
+        android:id="@+id/submit"
+        android:layout_gravity="center_horizontal" />
+    <Button
+        android:layout_width="185dip"
+        android:layout_height="wrap_content"
+        android:id="@+id/backbtn"
+        android:layout_marginTop="20dp"
+        android:text="חזור"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="25dp"
+        android:gravity="bottom|center"
+
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/button_ipq"
+        android:clickable="true" />
+    <ProgressBar
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/posting"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal" />
+
+
+</LinearLayout>

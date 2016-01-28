@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dip"
+    android:background="@color/windowBackground">
+
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="60dip"
+            android:layout_height="60dip"
+            android:id="@+id/profilepic"
+            android:focusable="false"
+            android:src="@drawable/userp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    <TextView
+        android:id="@+id/text_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:focusable="false"
+        android:paddingTop="5dp"
+        android:textColor="#ffffffff"
+
+        android:layout_marginRight="31dp"
+        android:layout_marginEnd="31dp"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/profilepic"
+        android:layout_toStartOf="@+id/profilepic" />
+
+
+
+
+    <CheckBox
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:id="@+id/fav_icon"
+        android:button="@drawable/check_box"
+
+        android:checked="true"
+        android:focusableInTouchMode="false"
+        android:focusable="false"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="28dp"
+        android:layout_marginStart="28dp" />
+
+
+</RelativeLayout>
