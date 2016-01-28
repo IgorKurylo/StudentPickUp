@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgrnd"
+    android:id="@+id/fragment_list1">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="חיפוש טרמפ"
+        android:id="@+id/textView"
+        android:textSize="30dp"
+        android:textStyle="bold"
+
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ffffffff"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp" />
+
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp" />
+
+
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:textColor="#000000"
+        android:paddingLeft="5dp"
+        android:background="@drawable/grey"
+        android:text="הגדר תאריך"
+        android:id="@+id/btnDate"
+        android:layout_marginTop="28dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/btnHome"
+        android:layout_alignStart="@+id/btnHome" />
+
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="110dp"
+        android:layout_marginTop="33dp"
+        android:weightSum="1"
+        android:id="@+id/rdGrpCollageHome"
+
+        android:checked="false"
+
+
+        android:layout_below="@+id/btnDate"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="נסיעה למכללה"
+            android:id="@+id/collage"
+            android:layout_gravity="center_horizontal"
+            android:checked="false"
+            android:textSize="20dp"
+
+            android:textColor="#ffffffff"
+            android:textStyle="bold"
+            android:layout_alignBottom="@+id/btnHome"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="0.13" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="נסיעה הביתה  "
+            android:id="@+id/home"
+            android:layout_gravity="center_horizontal"
+            android:checked="false"
+            android:textSize="20dp"
+            android:layout_weight="0.13"
+            android:textColor="#ffffffff"
+            android:textStyle="bold"
+            android:layout_alignBottom="@+id/btnHome"
+            android:layout_alignRight="@+id/textView"
+            android:layout_alignEnd="@+id/textView" />
+
+    </RadioGroup>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:textColor="#000000"
+        android:paddingLeft="5dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/grey"
+        android:text="הגדר יעד"
+        android:id="@+id/btnHome"
+        android:visibility="invisible"
+        android:layout_below="@+id/rdGrpCollageHome"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:textColor="#000000"
+        android:paddingLeft="5dp"
+        android:background="@drawable/grey"
+        android:text="חפש לי טרמפ"
+        android:id="@+id/submit"
+        android:layout_below="@+id/btnHome"
+        android:layout_alignLeft="@+id/btnHome"
+        android:layout_alignStart="@+id/btnHome"
+        android:layout_marginTop="24dp" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/finddriver"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp" />
+
+
+</RelativeLayout>

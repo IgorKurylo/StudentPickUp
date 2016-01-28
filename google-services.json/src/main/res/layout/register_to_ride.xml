@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgrnd">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="פרסום טרמפ"
+        android:id="@+id/textView"
+        android:textSize="30dp"
+        android:textStyle="bold"
+
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ffffffff" />
+
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:textColor="#000000"
+        android:paddingLeft="5dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/grey"
+        android:text="הגדר שעת יציאה"
+        android:id="@+id/btnTimeOut"
+        />
+
+
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:textColor="#000000"
+        android:paddingLeft="5dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/grey"
+        android:text="הגדר תאריך"
+        android:id="@+id/btnDate"
+        />
+
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:textColor="#000000"
+        android:paddingLeft="5dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/grey"
+        android:text="הגדר תעריף"
+        android:id="@+id/btnRate"
+        />
+
+
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="110dp"
+        android:layout_below="@+id/imageView"
+        android:layout_marginTop="15dp"
+        android:weightSum="1"
+        android:id="@+id/rdGrpCollageHome"
+
+        android:checked="false"
+
+
+        >
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:text="נסיעה למכללה"
+            android:id="@+id/collage"
+            android:layout_gravity="center_horizontal"
+            android:checked="false"
+            android:textSize="20dp"
+            android:textColor="#ffffffff"
+            android:textStyle="bold"
+            />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="נסיעה הביתה  "
+            android:id="@+id/home"
+            android:layout_gravity="center_horizontal"
+            android:checked="false"
+            android:textSize="20dp"
+            android:layout_weight="0.13"
+            android:textColor="#ffffffff"
+            android:textStyle="bold"
+            />
+    </RadioGroup>
+
+    <Button
+        android:layout_width="185dp"
+        android:layout_height="38dp"
+
+        android:paddingLeft="5dp"
+
+        android:background="@drawable/submit"
+
+        android:id="@+id/submit"
+        android:layout_gravity="center_horizontal" />
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/posting"
+        android:layout_gravity="center_horizontal" />
+
+
+</LinearLayout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgrnd">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="עדכון פרטים"
+        android:id="@+id/textView"
+        android:textSize="30dp"
+        android:textStyle="bold"
+
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ffffffff" />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:textColor="#000000"
+        android:paddingLeft="5dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/grey"
+        android:text="עדכן טלפון"
+        android:id="@+id/btnPhone"
+        />
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:textColor="#000000"
+        android:paddingLeft="5dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/grey"
+        android:text="עדכן כתובת"
+        android:id="@+id/btnAddress"
+        />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:textColor="#000000"
+        android:paddingLeft="5dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/grey"
+        android:text="עדכן עיר"
+        android:id="@+id/btnCity"
+        />
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:textColor="#000000"
+        android:paddingLeft="5dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/grey"
+        android:text="עדכן סיסמא"
+        android:id="@+id/btnPass"
+        />
+
+
+    <Button
+        android:layout_width="185dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="20dip"
+        android:paddingLeft="5dp"
+
+        android:background="@drawable/submit"
+
+        android:id="@+id/submit"
+        android:layout_gravity="center_horizontal" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Updating"
+        android:layout_gravity="center_horizontal" />
+
+
+</LinearLayout>

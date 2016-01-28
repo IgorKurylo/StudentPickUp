@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgrnd">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="הנוסעים שלי"
+        android:id="@+id/textView"
+        android:textSize="30dp"
+        android:textStyle="bold"
+
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ffffffff" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="400dip"
+        android:id="@+id/listView"
+
+        android:layout_gravity="center_horizontal" />
+    <View
+        android:layout_width="185dip"
+        android:layout_height="38dip"
+        android:id="@+id/backbtn"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/back"
+        android:clickable="true" />
+
+
+
+</LinearLayout>

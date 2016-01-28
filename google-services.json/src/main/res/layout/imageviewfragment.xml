@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     android:id="@+id/signup"
+    android:background="@drawable/backgrnd" >
+
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="32dp"
+        android:id="@+id/onestep"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/onestep"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/addrss"
+        android:layout_alignStart="@+id/addrss"
+        android:layout_marginTop="15dp" />
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:hint="Enter Address"
+        android:id="@+id/addrss"
+        android:textColor="#000000"
+
+        android:layout_gravity="center_horizontal"
+
+        android:background="@drawable/grey"
+        android:inputType="textPostalAddress"
+        android:layout_above="@+id/auto_complete"
+        android:layout_alignLeft="@+id/auto_complete"
+        android:layout_alignStart="@+id/auto_complete"
+        android:layout_marginBottom="18dp" />
+
+   <AutoCompleteTextView
+       android:layout_width="250dp"
+       android:layout_height="40dp"
+       android:background="@drawable/grey"
+       android:id="@+id/auto_complete"
+       android:hint="Enter City"
+       android:layout_gravity="center_horizontal"
+       android:layout_above="@+id/Phone"
+       android:layout_alignLeft="@+id/Phone"
+       android:layout_alignStart="@+id/Phone"
+       android:layout_marginBottom="13dp" />
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:hint="Enter Phone"
+        android:id="@+id/Phone"
+        android:textColor="#000000"
+        android:layout_gravity="center_horizontal"
+
+        android:background="@drawable/grey"
+        android:inputType="phone"
+        android:layout_alignBottom="@+id/finish"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="77dp" />
+
+
+    <ImageButton
+        android:layout_width="190dp"
+        android:layout_height="40dp"
+        android:id="@+id/finish"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/finishbtn"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>
