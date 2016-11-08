@@ -1,60 +1,47 @@
 package com.ipq.ipq.Model;
 
 
-public class User {
+import com.google.android.gms.maps.model.LatLng;
+import com.google.gson.annotations.SerializedName;
 
-    private String  Id;
-    private String FullName;
+public class User extends BaseAccount
+{
 
-    private String Address;
-    private String TelNumber;
+    @SerializedName("First_Name")
+    private String FirstName;
+    @SerializedName("Last_Name")
+    private String LastName;
+    @SerializedName("Phone")
+    private String PhoneNumber;
+    @SerializedName("Email")
     private String Email;
-    private String Pass;
-    private String City;
+    @SerializedName("ImageUrl")
+    private String ProfileImageUrl;
+    @SerializedName("college")
+    private College DriverCollege;
+    @SerializedName("address")
+    private Address address;
 
-//    private int ImageID;
-    public User(String id, String fullname, String address, String telNumber, String email,String pss,String city) {
-        Id = id;
-        FullName = fullname;
-        Address = address;
-        TelNumber = telNumber;
-        Email = email;
+    public User(String uniqueId, String password)
+    {
+        super(uniqueId, password);
 
-        City=city;
-        Pass=pss;
     }
 
-    public String getId() {
-        return Id;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setId(String id) {
-        Id = id;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
-    public String getFullName() {
-        return FullName;
+    public College getDriverCollege() {
+        return DriverCollege;
     }
 
-    public void setFullName(String fullName) {
-        FullName =fullName ;
-    }
-
-
-    public String getAddress() {
-        return Address;
-    }
-
-    public void setAddress(String address) {
-        Address = address;
-    }
-
-    public String getTelNumber() {
-        return TelNumber;
-    }
-
-    public void setTelNumber(String telNumber) {
-        TelNumber = telNumber;
+    public void setDriverCollege(College driverCollege) {
+        DriverCollege = driverCollege;
     }
 
     public String getEmail() {
@@ -65,29 +52,35 @@ public class User {
         Email = email;
     }
 
-    public String getPass() {
-        return Pass;
+    public String getFirstName() {
+        return FirstName;
     }
 
-    public void setPass(String pass) {
-        Pass = pass;
+    public void setFirstName(String firstName) {
+        FirstName = firstName;
     }
 
-    public String getCity() {
-        return City;
+    public String getLastName() {
+        return LastName;
     }
 
-    public void setCity(String city) {
-        City = city;
+    public void setLastName(String lastName) {
+        LastName = lastName;
     }
 
-    @Override
-    public String toString() {
-        return "" +
-                "Id='" + Id + '\'' +
-                ", FullName='" + FullName + '\'' +
-                ", Address='" + Address + '\'' +
-                ", TelNumber='" + TelNumber + '\'' +
-                ", Email='" + Email + '\'';
+    public String getPhoneNumber() {
+        return PhoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        PhoneNumber = phoneNumber;
+    }
+
+    public String getProfileImageUrl() {
+        return ProfileImageUrl;
+    }
+
+    public void setProfileImageUrl(String profileImageUrl) {
+        ProfileImageUrl = profileImageUrl;
     }
 }

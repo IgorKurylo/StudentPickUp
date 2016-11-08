@@ -1,9 +1,0 @@
-<layer-list
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <item android:drawable="@drawable/editfield"/>
-    <item
-        android:drawable="@drawable/edittext_shadow"
-        android:bottom="5px" />
-
-</layer-list>

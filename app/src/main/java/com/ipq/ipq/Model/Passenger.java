@@ -10,27 +10,35 @@ public class Passenger implements Serializable
     private String Address;
     private String Phone;
     private String Direcation;
-    private String IDPass;
+    private String Email;
+    private College colleges;
 
 
 
-    public Passenger(String fullName, String address, String phone,String Dir,String IDp) {
+    public Passenger(String fullName, String address, String phone,String email,College colleges) {
         FullName = fullName;
         Address = address;
         Phone = phone;
-        Direcation=Dir;
-
-        IDPass=IDp;
-
-
-    }
-    public String getIDPass() {
-        return IDPass;
+        Email=email;
+        this.colleges=colleges;
     }
 
-    public void setIDPass(String IDPass) {
-        this.IDPass = IDPass;
+    public College getColleges() {
+        return colleges;
     }
+
+    public void setColleges(College colleges) {
+        this.colleges = colleges;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
+    }
+
     public String getDirecation() {
         return Direcation;
     }

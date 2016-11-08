@@ -1,0 +1,35 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+<group
+    android:checkableBehavior="single">
+
+    <item
+        android:id="@+id/mypass"
+        android:title="@string/pass"/>
+    <item
+        android:id="@+id/search_drive"
+        android:icon="@drawable/search2"
+        android:title="@string/searchdrive"/>
+    <item
+        android:id="@+id/map"
+        android:icon="@drawable/showdir"
+        android:title="@string/showmap"/>
+
+    <item
+        android:icon="@drawable/updatedet"
+        android:title="@string/updatedet"
+        android:id="@+id/update"
+        />
+            <item
+                android:icon="@drawable/logout"
+                android:title="@string/logout"
+                android:id="@+id/disconnect"
+                />
+            <item
+                android:icon="@drawable/exit"
+                android:title="@string/exitblock"
+                android:id="@+id/exit"
+                />
+</group>
+
+    </menu>

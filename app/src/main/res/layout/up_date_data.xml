@@ -3,121 +3,84 @@
 android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/windowBackground">
-
-    <TextView
-        android:layout_width="wrap_content"
+   >
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="עדכון פרטים אישיים"
-        android:id="@+id/textView"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:textColor="#ffffffff"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical">
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:background="@drawable/grey"
+        android:textColor="@color/colorAccent"
         android:hint="עדכן טלפון"
-        android:ems="10"
+        android:textColorHint="@color/colorAccent"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:inputType="phone"
+        android:ems="14"
+        android:imeOptions="actionNext"
         android:gravity="bottom|center"
         android:layout_gravity="center_horizontal"
         android:id="@+id/btnPhone"
-
-        android:layout_marginTop="20dp" />
-    <EditText
+        android:layout_marginTop="10dp" />
+    <AutoCompleteTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:ems="10"
-
-        android:background="@drawable/grey"
+        android:ems="14"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:imeOptions="actionNext"
         android:hint="עדכן כתובת"
         android:id="@+id/btnAddress"
         android:gravity="bottom|center"
-
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="20dp" />
 
-    <EditText
+    <AutoCompleteTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:paddingLeft="5dp"
+        android:textColor="@color/colorAccent"
         android:hint="עדכן עיר"
-        android:background="@drawable/grey"
-        android:ems="10"
+        android:textSize="20sp"
+        android:ems="14"
+        android:imeOptions="actionNext"
 
         android:id="@+id/btnCity"
         android:gravity="bottom|center"
-
-
-        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textColorHint="@color/colorAccent"
+        android:layout_marginTop="20dp"
         android:layout_gravity="center_horizontal" />
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="12"
-
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:textStyle="bold"
+        android:hint="בחר מוסד לימודים"
+        android:imeOptions="actionDone"
+        android:singleLine="true"
+        android:textSize="20sp"
+        android:ems="14"
+        android:focusable="false"
+        android:gravity="bottom|center"
         android:layout_gravity="center_horizontal"
-        android:background="@drawable/grey"
-        android:gravity="bottom|center"
-        android:textSize="15dp"
-        android:hint="עדכן סיסמה"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"
-        android:id="@+id/btnPass"
-        android:layout_marginTop="10dp" />
-
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="עדכן פרטים"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        android:gravity="bottom|center"
-        android:background="@drawable/button_ipq"
-        android:textColor="@color/textColorPrimary"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/submit"
-        android:layout_marginTop="30dp" />
-
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/backbtn"
-        android:text="חזור"
-        android:textSize="25dp"
-        android:textColor="@color/textColorPrimary"
-        android:textStyle="bold"
-        android:gravity="bottom|center"
-        android:background="@drawable/button_ipq"
-        android:clickable="true"
-
-        android:layout_marginTop="25dp"
-        android:layout_gravity="center_horizontal" />
-    <ProgressBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/Updating"
-        android:layout_marginTop="10dp"
-
-        android:layout_gravity="center_horizontal" />
-
-
-    <TextView
-        android:layout_width="59dp"
-        android:layout_height="20dp"
-        android:text="מעדכן..."
-
-        android:layout_marginTop="10dp"
-
-        android:id="@+id/textupdate"
-        android:textColor="#ffffffff"
-        android:layout_gravity="center_horizontal" />
+        android:id="@+id/NameofCollage"
+        android:layout_marginTop="20dp"
+         />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableTop="@drawable/update"
+            android:text="עדכן פרטים"
+            android:textStyle="bold"
+            android:id="@+id/submit"
+            android:layout_marginTop="64dp" />
+    </LinearLayout>
 
 </LinearLayout>

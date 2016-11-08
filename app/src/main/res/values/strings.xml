@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="MapAPI">AIzaSyB-kyTKPNyVnqWBq0I6dmlG6X4ZPNX0q3s</string>
     <string name="app_name">IPQ</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
     <string name="title_activity_maps">Map</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="keyapigooglemaps">AIzaSyAYc063S5qPiCfb7aY47TRnrac4XZD_z4s</string>
     <string name="urlgoogle">https://maps.googleapis.com/maps/api/place/textsearch/json?query=</string>
+    <string name="urlgoogle2">http://maps.googleapis.com/maps/api/geocode/json?latlng=</string>
+    <string name="ApplicationName">IPQ</string>
+
+    <string name="driverMain">Drivers Suggestions</string>
+    <string name="PassengerMode">Passenger Mode</string>
+
+
     ////string for database
     <string name="SignUp">http://ec2-52-33-140-83.us-west-2.compute.amazonaws.com/UserInsert.php</string>
     <string name="Login">http://ec2-52-33-140-83.us-west-2.compute.amazonaws.com/LoginIpq.php</string>
@@ -19,21 +24,56 @@
     <string name="UpdateDirecation">http://ec2-52-33-140-83.us-west-2.compute.amazonaws.com/UpdateDir.php</string>
     <string name="AutoCompleteCollege">http://ec2-52-33-140-83.us-west-2.compute.amazonaws.com/GetCompleteList.php</string>
     <string name="UpdateWork">http://ec2-52-33-140-83.us-west-2.compute.amazonaws.com/UpdateWork.php</string>
+    <string name="ResetPassword">http://ec2-52-33-140-83.us-west-2.compute.amazonaws.com/ResetPassword.php</string>
+    <string name="CreateGrp">http://ec2-52-33-140-83.us-west-2.compute.amazonaws.com/CreateTableGrp.php</string>
+    <string name="CheckPlace">http://ec2-52-33-140-83.us-west-2.compute.amazonaws.com/CountDrivers.php</string>
+    <string name="SearchByName">http://ec2-52-33-140-83.us-west-2.compute.amazonaws.com/SearchDriverByName.php</string>
+    <string name="GetGrpbyID">http://ec2-52-33-140-83.us-west-2.compute.amazonaws.com/GetGrpByID.php</string>
+    <string name="GetGrpList">http://ec2-52-33-140-83.us-west-2.compute.amazonaws.com/GrpListByUser.php</string>
 
-    <string-array name="cities_arr">
-        <item name="0">עכו</item>
-        <item name="1">נהריה</item>
-        <item name="2">כרמיאל</item>
-        <item name="3">מעלות</item>
-        <item name="4">חיפה</item>
-        <item name="5">קרית מוצקין</item>
-        <item name="6">קרית ביאליק</item>
-        <item name="7">קרית אתא</item>
-        <item name="8">קרית ים</item>
-        <item name="9">קרית חיים</item>
-        <item name="10">נצרת עילית</item>
-        <item name="11">נשר</item>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
 
-    </string-array>
 
+
+
+    <string name="pass">נוסעים שלי</string>
+    <string name="post">פירסום נסיעה</string>
+    <string name="showmap">הצג מפה</string>
+    <string name="favpass">נוסעים מועדפים</string>
+    <string name="searchdrive">חיפוש נסיעה</string>
+    <string name="seekdriver">חיפוש נהג</string>
+    <string name="fassdriver">נהגים מועדפים</string>
+    <string name="updatedet">עדכן פרטיים</string>
+    <string name="dir">עדכן מוסד לימודים</string>
+    <string name="otherset">הגדרות</string>
+    <string name="fav">נוסעים מועדפים</string>
+    <string name="exitblock">יציאה</string>
+    <string name="logout">התנתק</string>
+
+    <string name="home">עיר מגורים</string>
+    <string name="college">מוסד לימודים</string>
+    <string name="alldirs">3</string>
+
+    <string name="tab1">עיר מגורים</string>
+    <string name="tab2">מוסד לימודים</string>
+    <string name="tab3">הכל</string>
+    <string name="first">I</string>
+    <string name="second">P</string>
+    <string name="third">Q</string>
+    <string name="email">אימייל</string>
+    <string name="slogan">PickUp You EveryWhere</string>
+    <string name="text1">על מנת לאפס את סיסמתך, יש לאמת את דוא"ל כדי שנוכל להמשיך בתהליך האיפוס</string>
+    <string name="text2">המערכת מבצעת אימות משתמש מול שרת הנתונים...</string>
+    <string name="text3">המערכת מאפסת את סיסמתך , נא המתן...</string>
+    <string name="text4">הכנס סיסמה חדשה</string>
+    <string name="welcome">ברוכים הבאים</string>
+    <string name="content">הרשמה לאפליקציה עברה בהצלחה</string>
+    <string name="mainactivity">מיקום שלי</string>
+    <string name="searchridetxt">בחר מתי תרצה ליסוע</string>
+    <string name="gpsnotworking">שירותי המיקום אינם פועלים יש להפעיל את שירותי המיקום </string>
+    <string name="needupdate">כתובת שלך לא קיימת במערכת יש לעדכן אותה</string>
+    <string name="shekel">\u20AA</string>
+    <string name="loginauth">מתחבר...</string>
+    <string name="notstillreg">עדיין לא רשום?</string>
 </resources>

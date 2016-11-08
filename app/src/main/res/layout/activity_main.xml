@@ -10,46 +10,18 @@
     tools:context=".MainActivity"
     android:background="@color/windowBackground"
     >
-
-    <View
-        android:layout_width="259dip"
-        android:layout_height="123dip"
-        android:id="@+id/logoipg"
-        android:background="@drawable/newlogov4"
-        android:layout_gravity="center_horizontal"
-
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"></View>
-    
     <Button
-        android:layout_width="195dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/logbtn"
         android:text="התחבר"
-        android:textSize="25dp"
-        android:gravity="bottom|center"
+        android:textSize="25sp"
+        android:gravity="center"
         android:textColor="@color/textColorPrimary"
-
-        android:background="@drawable/button_ipq"
-        android:layout_below="@+id/logoipg"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="77dp"
-        android:textStyle="bold" />
-    <Button
-        android:layout_width="195dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/signbtn"
         android:textStyle="bold"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
-        android:text="הרשמה"
-        android:textSize="25dp"
-        android:textColor="@color/textColorPrimary"
-        android:background="@drawable/button_ipq"
-        android:gravity="bottom|center"
-        android:layout_below="@+id/logbtn"
-        android:layout_alignLeft="@+id/logbtn"
-        android:layout_alignStart="@+id/logbtn"
-        android:layout_marginTop="27dp" />
 
 
 </RelativeLayout>

@@ -22,6 +22,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.ipq.ipq.DataBase.DataBaseSqlite;
 import com.ipq.ipq.MapContollers.CalcShortRoad;
 import com.ipq.ipq.Model.Passenger;
 import com.ipq.ipq.Model.Station;
@@ -84,9 +85,9 @@ public class Show_Map extends FragmentActivity implements OnMapReadyCallback {
         /**
          *  init the all options for google map type,zoom, and the initialization of the map fragment;
          */
-        DataBaseSqlite sqlite=new DataBaseSqlite(getApplicationContext(),"DB_IPQ_BookMarks",null,1);
+        DataBaseSqlite sqlite=new DataBaseSqlite(getApplicationContext());
         try {
-            DIRECATION = sqlite.GetDirecation().get(0);
+            //DIRECATION = sqlite.GetDirecation().get(0);
         }catch (Exception ex)
         {
             Log.e("Error",ex.toString());
@@ -97,7 +98,6 @@ public class Show_Map extends FragmentActivity implements OnMapReadyCallback {
         btn1 = (Button) findViewById(R.id.showdirecation);
         waiting = (TextView) findViewById(R.id.wait);
         waiting.setVisibility(View.INVISIBLE);
-        Id_Driver=String.valueOf(IpqMain.getId());
 
         Intent mapdata = getIntent(); // get list of the passenger to this activity;
         if(mapdata.hasExtra("ListPass")) //check if the data have list of passengers
@@ -177,7 +177,6 @@ public class Show_Map extends FragmentActivity implements OnMapReadyCallback {
                     polylineOptions.width(7);
                     map.addPolyline(polylineOptions);
                 }
-                DBQ.DeleteFunc(Id_Driver,DELQUERY,DeleteCallBack); //call the function in DBQ for delete the passenger same id driver which start the drive
             }
         };
         btn1.setOnClickListener(new View.OnClickListener() {

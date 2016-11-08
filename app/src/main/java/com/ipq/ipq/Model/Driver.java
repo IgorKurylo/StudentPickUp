@@ -1,115 +1,120 @@
 package com.ipq.ipq.Model;
 
+import com.google.android.gms.maps.model.LatLng;
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 
-/**
- * Created by IG on 18/08/2015.
- */
-public class Driver implements Serializable{
 
-    private String FullName;
-    private String Mobile;
-    private String Adress;
+public class Driver extends User implements Serializable
+{
 
 
-    private String IdD;
-    private String Time;
-    private String Date;
-    private String Payment;
-    public String Dir;
+    @SerializedName("TimeOut")
+    private String Timeout;
+    @SerializedName("TimeBack")
+    private String Timeback;
+    @SerializedName("DateRide")
+    private String Date_Time;
+    @SerializedName("To")
+    private Address To;
+    @SerializedName("From")
+    private Address From;
+    @SerializedName("StudentInRide")
+    private int Sit_Number;
+    @SerializedName("Price")
+    private float  Price;
+    private String Note;
+    private String Car_Type;
 
-    public String getIdD() {
-        return IdD;
+
+    public Driver(String uniqueId, String password) {
+        super(uniqueId, password);
     }
 
-    public void setIdD(String idD) {
-        IdD = idD;
+    public Driver(String uniqueId, String password, String car_Type, String date_Time, Address from, String note, float price, int sit_Number, String timeback, String timeout, Address to)
+    {
+        super(uniqueId, password);
+        Car_Type = car_Type;
+        Date_Time = date_Time;
+        From = from;
+        Note = note;
+        Price = price;
+        Sit_Number = sit_Number;
+        Timeback = timeback;
+        Timeout = timeout;
+        To = to;
     }
 
-    public Driver(String fullName,String IdDriver,String date ,String mobile, String Add, String time,  String payment,String Direcation) {
-        FullName = fullName;
-        Mobile = mobile;
-        this.Adress=Add;
-     IdD=IdDriver;
-     Date=date;
-        Time = time;
-        Payment = payment;
-        Dir=Direcation;
-    }
-    public String getAdress() {
-        return Adress;
+    public String getCar_Type() {
+        return Car_Type;
     }
 
-    public void setAdress(String adress) {
-        Adress = adress;
+    public void setCar_Type(String car_Type) {
+        Car_Type = car_Type;
     }
 
-    public String getDate() {
-        return Date;
+    public String getDate_Time() {
+        return Date_Time;
     }
 
-    public void setDate(String date) {
-        Date = date;
+    public void setDate_Time(String date_Time) {
+        Date_Time = date_Time;
     }
 
-    public String getFullName() {
-        return FullName;
+    public Address getFrom() {
+        return From;
     }
 
-    public void setFullName(String fullName) {
-        FullName = fullName;
+    public void setFrom(Address from) {
+        From = from;
     }
 
-    public String getMobile() {
-        return Mobile;
+    public String getNote() {
+        return Note;
     }
 
-    public void setMobile(String mobile) {
-        Mobile = mobile;
+    public void setNote(String note) {
+        Note = note;
     }
 
-
-
-
-
-    public String getTime() {
-        return Time;
+    public float getPrice() {
+        return Price;
     }
 
-    public void setTime(String time) {
-        Time = time;
+    public void setPrice(float price) {
+        Price = price;
     }
 
-
-
-
-
-    public String getPayment() {
-        return Payment;
+    public int getSit_Number() {
+        return Sit_Number;
     }
 
-    public void setPayment(String payment) {
-        Payment = payment;
+    public void setSit_Number(int sit_Number) {
+        Sit_Number = sit_Number;
     }
 
-    public String getDir() {
-        return Dir;
+    public String getTimeback() {
+        return Timeback;
     }
 
-    public void setDir(String dir) {
-        Dir = dir;
+    public void setTimeback(String timeback) {
+        Timeback = timeback;
     }
 
-    @Override
-    public String toString() {
-        return
-                "שם נהג:" + FullName + "\n" +
-                "פלאפון:" + Mobile + "\n" +
-                "זמן יציאה:" + Time + "\n" +
-                "תשלום עבור נסיעה:" + Payment+"\n"+
-                 "כיוון נסיעה:" +Dir+"\n"
-                        +"כתובת הנהג:"+this.Adress;
+    public String getTimeout() {
+        return Timeout;
+    }
 
+    public void setTimeout(String timeout) {
+        Timeout = timeout;
+    }
 
+    public Address getTo() {
+        return To;
+    }
+
+    public void setTo(Address to) {
+        To = to;
     }
 }

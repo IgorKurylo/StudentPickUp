@@ -1,55 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/windowBackground"
+    android:layoutDirection="rtl"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical"
      >
 
-
-
-    <ImageView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ipq"
-        android:src="@drawable/newlogov4"
+        android:layoutDirection="ltr"
+        android:orientation="horizontal"
         android:layout_marginTop="40dp"
-        android:layout_below="@+id/textanimation"
-        android:layout_centerHorizontal="true" />
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/car"
-        android:src="@drawable/carwelcome"
-        android:paddingLeft="0dp"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/ipq"
-        android:layout_alignStart="@+id/ipq" />
+        android:layout_gravity="center"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ipqtext"
+            android:text="@string/ApplicationName"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="50sp"
+            android:textStyle="bold"/>
 
-    <ProgressBar
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/progress"
-        android:layout_below="@+id/car"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp" />
-    <TextSwitcher
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textanimation"></TextSwitcher>
+    </LinearLayout>
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/slogan"
+        android:id="@+id/slogan"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        />
+
+    <ImageView
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/wheel"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/wheel"
+
+        />
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Loading..."
+        android:gravity="center"
         android:id="@+id/loading"
         android:textSize="20dp"
         android:textColor="#ffffffff"
-        android:layout_marginTop="45dp"
-        android:layout_below="@+id/progress"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center_horizontal|bottom" />
+        android:layout_marginTop="150dp"
+        />
 
 
-</RelativeLayout>
+</LinearLayout>

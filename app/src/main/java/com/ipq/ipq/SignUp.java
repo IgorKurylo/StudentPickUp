@@ -1,171 +1,144 @@
 package com.ipq.ipq;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Typeface;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Message;
-import android.support.v7.app.ActionBarActivity;
+import android.support.design.widget.TextInputLayout;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.Toast;
+import android.widget.TextView;
 
+import com.google.android.gms.maps.model.LatLng;
+import com.ipq.ipq.DataBase.DataBaseSqlite;
 import com.ipq.ipq.Model.User;
+import com.ipq.ipq.Utils.ActivityHelper;
 
-import java.net.URLDecoder;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-public class SignUp extends ActionBarActivity {
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
 
-
-    EditText ID, Email, Pass, FirstName, LastName,Adress,Phone;
-    public AutoCompleteTextView City;
-    public ProgressBar signupbar;
-    String  emailuser = "", passuser = "", IDuser = "", FullName = "",Phonenum,address="",cityuser="",SignUpUrl="";
-    Button Submit;
-    ImageView SignUpLogo;
+public class SignUp extends AppCompatActivity
+{
+    public  EditText ConfirmPass, Email, Pass, FirstName, LastName,Phone;
+    public TextInputLayout emailadd,passw,passc,Fname,Lname,PhoneNumber;
+    public String  emailuser = "", passuser = "",Phonenum,pass1="",pass2="",SignUpUrl="",DateNow;
+    public Button Submit;
+    public LatLng latLng;
     public User user=null;
-    public Handler handler;
-    public String[] Cities=null;
+    public TextView IPQ;
+    public  ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup);
-        ID = (EditText) findViewById(R.id.ID);
-        Email = (EditText) findViewById(R.id.Email);
-        Pass = (EditText) findViewById(R.id.Pass);
-        FirstName = (EditText) findViewById(R.id.Fn);
-        LastName = (EditText) findViewById(R.id.Ln);
-        Submit = (Button) findViewById(R.id.submit);
-        Phone=(EditText)findViewById(R.id.Phone);
-        Adress=(EditText)findViewById(R.id.addrss);
-        Cities=getResources().getStringArray(R.array.cities_arr);
-        City=(AutoCompleteTextView)findViewById(R.id.auto_complete);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(),
-                R.layout.cosrum_text_view,Cities);
-        City.setAdapter(adapter);
-        City.setThreshold(1); //characters the user need to type..
-        signupbar=(ProgressBar)findViewById(R.id.signupsaving);
-        signupbar.setVisibility(View.GONE);
+        FindViews();
+        Typeface type= Typeface.createFromAsset(getApplicationContext().getAssets(),"fonts/arkitech.ttf");
+        IPQ.setTypeface(type);
         SignUpUrl=getResources().getString(R.string.SignUp);
-        getSupportActionBar().setTitle("הרשמה");
-        handler=new Handler(){
-
-
-            @Override
-            public void handleMessage(Message msg) {
-                super.handleMessage(msg);
-                if(msg.what==1)
-                {
-                    Toast.makeText(getApplicationContext(),"הרשמה עברה בהצלחה",Toast.LENGTH_LONG).show();
-                    Intent main=new Intent(getApplicationContext(),LoginWindow.class);
-                    startActivity(main);
-
-                }
-                if(msg.what==-1)
-                {
-                    Toast.makeText(getApplicationContext(),"הרשמה לא עברה בהצלחה נסה שנית",Toast.LENGTH_LONG).show();
-                    signupbar.setVisibility(View.GONE);
-                    signupbar.setVisibility(View.INVISIBLE);
-                    Submit.setClickable(true);
-                    user=null;
-
-                }
-            }
-        };
         Submit.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                try {
-                    FullName="";
-                    IDuser = ID.getText().toString();
-                    FullName+=" "+ URLDecoder.decode(FirstName.getText().toString());
-                    FullName+=" "+URLDecoder.decode(LastName.getText().toString());
-                    emailuser = Email.getText().toString();
-                    passuser = Pass.getText().toString();
-                    Phonenum=Phone.getText().toString();
-                    address=Adress.getText().toString();
-                    City.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onClick(View v)
+            {
+                     pass1=Pass.getText().toString();
+                     pass2=ConfirmPass.getText().toString();
 
-                            cityuser=City.getText().toString();
-                            Toast.makeText(view.getContext(),cityuser,Toast.LENGTH_LONG).show();
-
-                        }
-                    });
-                    cityuser=City.getText().toString();
-                    if(IDuser.equals("") )
+                     if(Email.getText().toString().equals(""))
                     {
-                        ID.setError("יש למלא מספר תעודת זהות");
-                    }
-                    else if(FullName.equals(""))
+                      Email.setError("נא למלא אימייל");
+                    }else
+                    if(FirstName.getText().toString().equals(""))
                     {
                         FirstName.setError("יש למלא שם פרטי");
+                    }else if(LastName.getText().toString().equals(""))
+                    {
                         LastName.setError("יש למלא שם משפחה");
                     }
-                    else if(emailuser.equals(""))
-                    {
-                       Email.setError("נא למלא אימייל");
-                    }
-                    else if( passuser.equals(""))
+                    else if(Pass.getText().toString().equals(""))
                     {
                         Pass.setError("נא למלא סיסמה");
                     }
-                    else if(!emailuser.contains("@"))
+                    else if(!isSamePassword(pass1,pass2))
                     {
-                        Email.setError("אימייל לא תקין");
+                        Pass.setError("סיסמאות לא תואמות");
                     }
-                    else if(address.equals("") )
-                    {
-                       Adress.setError("נא למלא כתובת מלאה");
-                    }
-                    else if(Phonenum.length()<10)
+                    else if(Phone.getText().toString().length()<10)
                     {
                         Phone.setError("מספר טלפון לא תקין");
-                    }else  if(cityuser.equals(""))
-                    {
-                        City.setError("נא רשום עיר מגורים");
-                    }else{
-
-
-                        user = new User(IDuser, FullName, address, Phonenum, emailuser, passuser, cityuser);
-                        signupbar.setVisibility(View.GONE);
-                        signupbar.setVisibility(View.VISIBLE);
-                        Submit.setClickable(false);
-                        DBQ.SignUp(SignUpUrl, user, handler);
                     }
 
-                } catch (Exception e) {
-                    Toast.makeText(v.getContext(), e.toString(), Toast.LENGTH_LONG).show();
-                }
+                    else
+                    {
+                        emailuser = Email.getText().toString();
+                        passuser = Pass.getText().toString();
+                        Phonenum=Phone.getText().toString();
+                    }
+
+
             }
         });
 
     }
+    public void FindViews()
+    {
+
+        Email = (EditText) findViewById(R.id.Email);
+        Pass = (EditText) findViewById(R.id.Pass);
+        ConfirmPass = (EditText) findViewById(R.id.PassConfirm);
+        FirstName = (EditText) findViewById(R.id.Fn);
+        LastName = (EditText) findViewById(R.id.Ln);
+        Submit = (Button) findViewById(R.id.submit);
+        Phone=(EditText)findViewById(R.id.Phone);
+        IPQ=(TextView)findViewById(R.id.ipqtext);
+        emailadd=(TextInputLayout)findViewById(R.id.emailadd);
+        Fname=(TextInputLayout)findViewById(R.id.Fname);
+        Lname=(TextInputLayout)findViewById(R.id.Lname);
+        passw=(TextInputLayout)findViewById(R.id.password);
+        passc=(TextInputLayout)findViewById(R.id.passcon);
+        PhoneNumber=(TextInputLayout)findViewById(R.id.phoneNumber);
+        Email.setFocusable(true);
+
+    }
+    public boolean isSamePassword(String pass1,String pass2)
+    {
+        return pass1.equals(pass2);
+    }
+
     @Override
     public boolean onOptionsItemSelected (MenuItem item){
-        switch (item.getItemId()) {
-            case android.R.id.home:
 
-                super.onBackPressed();
-                return true;
-        }
         return super.onOptionsItemSelected(item);
     }
 
     @Override
     public void onBackPressed() {
-        Intent back=new Intent(getApplicationContext(),MainActivity.class);
-        overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
-        startActivity(back);
         finish();
     }
 
+
+
+
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 }
 
 
