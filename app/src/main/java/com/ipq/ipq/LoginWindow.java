@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.ipq.ipq.Activities.Drivers_Activity;
 import com.ipq.ipq.Utils.ActivityHelper;
 import com.ipq.ipq.Utils.Session;
 
@@ -123,7 +124,7 @@ public class LoginWindow extends AppCompatActivity
                 {
                  if(jsonObject.getString("result").equals("OK"))
                  {
-                     Intent intent=new Intent(getApplicationContext(),IpqMain.class);
+                     Intent intent=new Intent(getApplicationContext(),Drivers_Activity.class);
                      session.SaveLoginDetails(user_email,user_pass);
                      overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                      startActivity(intent);

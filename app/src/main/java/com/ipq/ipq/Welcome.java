@@ -46,10 +46,6 @@ public class Welcome extends AppCompatActivity
 
                             Intent tmp=new Intent(getApplicationContext(), Drivers_Activity.class);
                             startActivity(tmp);
-
-
-
-
 //                        if (s.IsLogIn())
 //                        {
 //                            Intent intent = new Intent(getApplicationContext(), IpqMain.class);
