@@ -205,8 +205,8 @@ public class Show_Map extends FragmentActivity implements OnMapReadyCallback {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         //back to main activity
-                        Intent i=new Intent(getApplicationContext(),IpqMain.class);
-                        startActivity(i);
+//                        Intent i=new Intent(getApplicationContext(),IpqMain.class);
+//                        startActivity(i);
 
                     }
                 });

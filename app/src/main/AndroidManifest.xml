@@ -88,12 +88,13 @@
         <activity
             android:name=".Show_Map"
             android:label="Map"
-            android:parentActivityName=".IpqMain"
+            android:parentActivityName=".Activities.Drivers_Activity"
             >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ipq.ipq.MainActivity" />
         </activity>
+        <activity android:name=".Activities.Drivers_Activity"/>
         <activity android:name=".Welcome" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

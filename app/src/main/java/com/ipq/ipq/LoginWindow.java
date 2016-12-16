@@ -116,41 +116,41 @@ public class LoginWindow extends AppCompatActivity
         protected void onPostExecute(String s)
         {
             super.onPostExecute(s);
-            try{
-                progressDialog.dismiss();
-                JSONObject jsonObject=new JSONObject(s);
-                if(jsonObject.has("result"))
-                {
-                 if(jsonObject.getString("result").equals("OK"))
-                 {
-                     Intent intent=new Intent(getApplicationContext(),IpqMain.class);
-                     session.SaveLoginDetails(user_email,user_pass);
-                     overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-                     startActivity(intent);
-                     finish();
-                 }
-                 else
-                 {
-                     AlertDialog.Builder builder=new AlertDialog.Builder(LoginWindow.this);
-                     builder.setMessage("אימייל או הסיסמה אינם נכונים");
-                     builder.setPositiveButton("אישור", new DialogInterface.OnClickListener() {
-                         @Override
-                         public void onClick(DialogInterface dialog, int which)
-                         {
-
-                             dialog.dismiss();
-
-                         }
-                     });
-                     AlertDialog faild=builder.create();
-                     faild.show();
-
-                 }
-                }
-            }catch (JSONException ex)
-            {
-                Log.e("JsonLogin",ex.toString());
-            }
+//            try{
+//                progressDialog.dismiss();
+//                JSONObject jsonObject=new JSONObject(s);
+//                if(jsonObject.has("result"))
+//                {
+//                 if(jsonObject.getString("result").equals("OK"))
+//                 {
+//                     Intent intent=new Intent(getApplicationContext(),IpqMain.class);
+//                     session.SaveLoginDetails(user_email,user_pass);
+//                     overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+//                     startActivity(intent);
+//                     finish();
+//                 }
+//                 else
+//                 {
+//                     AlertDialog.Builder builder=new AlertDialog.Builder(LoginWindow.this);
+//                     builder.setMessage("אימייל או הסיסמה אינם נכונים");
+//                     builder.setPositiveButton("אישור", new DialogInterface.OnClickListener() {
+//                         @Override
+//                         public void onClick(DialogInterface dialog, int which)
+//                         {
+//
+//                             dialog.dismiss();
+//
+//                         }
+//                     });
+//                     AlertDialog faild=builder.create();
+//                     faild.show();
+//
+//                 }
+//                }
+//            }catch (JSONException ex)
+//            {
+//                Log.e("JsonLogin",ex.toString());
+//            }
         }
 
         @Override

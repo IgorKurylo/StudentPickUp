@@ -3,6 +3,7 @@ package com.ipq.ipq.Network;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.google.gson.Gson;
 import com.ipq.ipq.Model.Driver;
 import com.ipq.ipq.Utils.ActivityHelper;
 
@@ -60,6 +61,7 @@ public class DriverNetworkManager extends AsyncTask<Object,String,List<Driver>>
                 res=ActivityHelper.readStream(inputStream);
             }
             try{
+
 
                 JSONObject jsonObject=new JSONObject(res);
 
